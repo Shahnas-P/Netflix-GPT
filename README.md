@@ -1,17 +1,22 @@
 # Netflix-GPT
-  - npm create vite@latest
-  - Configured TailwindCss
+
+- npm create vite@latest
+- Configured TailwindCss
+- header
+- Login form
+- SignUp form
 
 # features
- - Login/SignUP
-     - SignIn / signUp Form
-     - Redirect to Browse Page
- - Browse (After Authentication)
-      - Header
-      - Main Movie
-           - Trailer in Background
-           - Movie Title and Description
-           - Movie Suggestions
- - Netflix GPT
-      - Search Bar
-      - Movie Suggestions
+
+- Login/SignUP
+  - SignIn / signUp Form
+  - Redirect to Browse Page
+- Browse (After Authentication)
+  - Header
+  - Main Movie
+    - Trailer in Background
+    - Movie Title and Description
+    - Movie Suggestions
+- Netflix GPT
+  - Search Bar
+  - Movie Suggestions
