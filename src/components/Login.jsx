@@ -1,24 +1,24 @@
 import Header from "./Header";
-import bg from "../assets/bg.jpg";
 import { useRef, useState, useEffect } from "react";
 import { checkValidate } from "../utils/validate";
 import { auth } from "../utils/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile
+  updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+//import BG image from constants.js file
+import { BG, USER_AVATAR } from "../utils/constants";
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   //Adding new state varible for error count and error message to given error for specific field
   const [errorCount, setErrorCount] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -60,7 +60,6 @@ const Login = () => {
       if (!isSignIn) {
         //SignUp Logic'
         createUserWithEmailAndPassword(auth, emailValue, passwordValue)
-
           .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
@@ -68,30 +67,35 @@ const Login = () => {
             //Update Profile
 
             updateProfile(user, {
-              displayName: fullNameValue ,  photoURL:"https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
-            }).then(() => {
+              displayName: fullNameValue,
+              photoURL:
+                USER_AVATAR,
+            })
+              .then(() => {
+                // Profile updated!
+                const { displayName, email, uid, photoURL } = auth.currentUser;
+                //Dispatch an action to add user object into redux store
 
+                dispatch(
+                  addUser({
+                    uid: uid,
+                    email: email,
+                    displayName: displayName,
+                    photoURL: photoURL,
+                  })
+                );
 
-              // Profile updated!
-              const {displayName,email,uid , photoURL}=auth.currentUser
-                      //Dispatch an action to add user object into redux store
-                      
-                    dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-                     
-              
-              // alert("User registered Successfully");
-              resetInputField()
-              navigate("/browse");
-
-  
-            }).catch((error) => {
-              // An error occurred
-            setErrorCount(3)
-            setErrorMessage(error.message || "Somthing went wrong , try again.")
-            });
+                // alert("User registered Successfully");
+                resetInputField();
+              })
+              .catch((error) => {
+                // An error occurred
+                setErrorCount(3);
+                setErrorMessage(
+                  error.message || "Somthing went wrong , try again."
+                );
+              });
             // resetInputField();
-
-           
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -106,10 +110,6 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            // console.log(user);
-
-            //Redirect into browse page after sign In
-            navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -132,7 +132,7 @@ const Login = () => {
       <Header />
       <div className="w-screen h-screen bg-black absolute opacity-45 rounded-md"></div>
 
-      <img className="w-screen h-screen  " src={bg} />
+      <img className="w-screen h-screen  " src={BG} />
       <form
         onSubmit={(e) => {
           e.preventDefault();

@@ -16,6 +16,14 @@
 - Implemented Sign-Out
 - Update Profile api
 - Fetch  from tmdb movies
+- BugFix: Sign up user displayNames and profile picture update 
+- BugFix: if the user is not logged in Redirect /browse  to login Page and vice versa
+- Unsubscribed to the onAuthStateChanged call back.
+- Added Hardcoded value to constants.js file.
+- Register TMDB API and create an app and get access token.
+- Get Data fron TMDB now playing movies List API
+- Added API fetched data into redux store.
+
 
 
 # features
