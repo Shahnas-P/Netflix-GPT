@@ -23,6 +23,7 @@
 - Register TMDB API and create an app and get access token.
 - Get Data fron TMDB now playing movies List API
 - Added API fetched data into redux store.
+- Created useNowPlayingMovies custom hook to fetch data and add to redux store.
 
 
 
