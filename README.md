@@ -24,8 +24,16 @@
 - Get Data fron TMDB now playing movies List API
 - Added API fetched data into redux store.
 - Created useNowPlayingMovies custom hook to fetch data and add to redux store.
+- Build MovieTitle and fetch movie data and display its title and overview.
 
 
+# Planning  of Browser Page
+ - Main Container
+   - Background Video
+   - Movie Title
+ - Secondary Container
+   - Movie List 
+   - Movie Card * n 
 
 # features
 
@@ -40,4 +48,6 @@
     - Movie Suggestions
 - Netflix GPT
   - Search Bar
-  - Movie Suggestions
+  - Movie Suggestions 
+
+ 
