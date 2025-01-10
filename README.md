@@ -25,6 +25,7 @@
 - Added API fetched data into redux store.
 - Created useNowPlayingMovies custom hook to fetch data and add to redux store.
 - Build MovieTitle and fetch movie data and display its title and overview.
+- Fetch Video from TMDB Video API and diplayed into the VideoContainer Component.
 
 
 # Planning  of Browser Page

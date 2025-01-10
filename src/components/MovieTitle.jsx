@@ -1,8 +1,7 @@
 import { Info, Play } from "lucide-react";
 
 const MovieTitle = ({title,overview})=>{
-    console.log(overview);
-    console.log(title);
+  
     
     
     return (
