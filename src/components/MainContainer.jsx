@@ -13,7 +13,7 @@ console.log((overview));
 
     return (
         <>
-        <div className="border border-red-800 w-screen h-screen h-max-auto w-max-auto  flex flex-col  ">
+        <div className="w-screen h-screen h-max-auto w-max-auto  flex flex-col  ">
             <MovieTitle title={title} overview={overview} />
             <VideoBackground id={id} />
         </div>

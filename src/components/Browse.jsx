@@ -8,7 +8,7 @@ const Browse = () => {
   return (
     <>
       <Header />
-      <div className="w-screen h-16 bg-black absolute "></div>
+      {/* <div className="w-screen h-screen opacity-30  bg-black absolute "></div> */}
       <MainContainer/>
       <SecondaryContainer/>
     </>

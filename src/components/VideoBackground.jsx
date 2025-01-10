@@ -11,9 +11,8 @@ const VideoBackground = ({ id }) => {
   return (
     <>
       <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${trailerVideo?.key}`}
+      className="w-screen bg-gradient-to-r from-neutral-800 to-neutral-500  aspect-video"
+        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo?.key}`}
         title="YouTube video player"
       ></iframe>
     </>

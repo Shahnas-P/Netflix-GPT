@@ -27,6 +27,7 @@
 - Build MovieTitle and fetch movie data and display its title and overview.
 - Fetch Video from TMDB Video API and diplayed into the VideoContainer Component.
 - Custome hook for the video fetch.
+- Build Video Backgroud with Video trailer.
 
 
 # Planning  of Browser Page
