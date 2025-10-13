@@ -17,7 +17,6 @@ const LoginForm = () => {
   const password = useRef(null)
   const fullName = useRef(null)
   const [error,setError] = useState(null)
-  const navigate = useNavigate()
   
   const handleSignupForm = () =>{
     setIsSignInForm(!isSignInForm)
@@ -47,7 +46,6 @@ const LoginForm = () => {
             .catch((error) => {
               setError(error.message)
             });
-          navigate('/browse')
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -60,7 +58,6 @@ const LoginForm = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate('/browse')
         })
         .catch((error) => {
           const errorCode = error.code;
